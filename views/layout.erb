@@ -48,9 +48,26 @@
               <li class="nav-item"><a href="/" class="nav-link ">Home</a>
               </li>
               <li class="nav-item"><a href="/about" class="nav-link">About</a>
-              </li>
-              <li class="nav-item"><a href="/login" class="nav-link">Log In</a>
-              </li>
+
+                <% if session[:user_id] %>
+
+                  <!-- only show this code when signed in -->
+
+                  <!-- clicking on this link will hit the get "/sign-out" route -->
+                  <li class="nav-item"><a href="/logout" class="nav-link">Sign out</a>
+                  </li>
+
+                <% else %>
+
+                  <!-- only show this code when signed out -->
+                  <li class="nav-item"><a href="/login" class="nav-link">Log In</a>
+                  </li>
+                  <li class="nav-item"><a href="/signup" class="nav-link">Sign Up</a>
+                  </li>
+                
+                <% end %>
+
+
               <li class="nav-item"><a href="/contact" class="nav-link ">Contact</a>
               </li>
             </ul>
