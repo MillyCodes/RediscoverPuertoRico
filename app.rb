@@ -39,8 +39,8 @@ end
 
 # get single post by id when clicked from main page
 # TEST AFTER SEED
-get '/single_post/:id' do
-    @specific_post = Post.find(params[:id])
+get '/single_post' do
+    # @specific_post = Post.find(params[:id])
     erb :single_post
 end
 

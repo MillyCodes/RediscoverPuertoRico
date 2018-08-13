@@ -4,8 +4,6 @@ class CreatePost < ActiveRecord::Migration[5.2]
       t.string :username
       t.string :title
       t.string :content
-      t.belongs_to :user, index: true 
-
     end
   end
 end
