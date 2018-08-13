@@ -5,7 +5,7 @@ class CreateUser < ActiveRecord::Migration[5.2]
       t.string :password
       t.string :name
       t.string :email
-      t-string :b_day
+      t.string :b_day
     end
   end
 end
