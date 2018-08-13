@@ -6,9 +6,9 @@ require "sinatra/activerecord"
 # require './models/score.rb'
 
 # set :database, {adapter: 'postgresql', database: 'olympics'}
+# enable :sessions
 
-# links to all other pages --works
-
+# links to all other pages -works, update routes here
 # main index, shows all blog posts and links
 get '/' do
     erb :index
@@ -25,11 +25,17 @@ get '/contact' do
 end
 
 
-
-# get single post by id
+# get single post by id when clicked from main page
 get '/single_post' do
     erb :single_post
 end
+
+#Sign In Form Route
+get '/login' do 
+    erb :login
+end
+
+
 
 # Should show information about all skaters --works
 # Each skaters name should link to thier specific page at /skater/:id
