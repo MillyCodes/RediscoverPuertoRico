@@ -2,10 +2,9 @@ require "sinatra"
 require "sinatra/activerecord"
 require "sinatra/flash"
 
-require './models/user.rb'
-require './models/post.rb'
-require './models/tag.rb'
-require './models/post_tag.rb'
+# require './models/user.rb'
+# require './models/post.rb'
+# require './models/tag.rb'
 
 set :database, {adapter: 'postgresql', database: 'pr-blog'}
 enable :sessions
@@ -18,13 +17,13 @@ get '/' do
 end
 
 
-# get '/' do
-#     if session[:user_id] 
-#         erb :homepage
-#     else
-#         erb :sign_in
-#     end
-# end
+get '/' do
+    if session[:user_id] 
+        erb :homepage
+    else
+        erb :sign_in
+    end
+end
 
 
 # get about page post -route works/erb done
@@ -40,19 +39,14 @@ end
 
 # get single post by id when clicked from main page
 # TEST AFTER SEED
-get '/single_post/:id' do
-    @specific_post = Post.find(params[:id])
+get '/single_post' do
+    # @specific_post = Post.find(params[:id])
     erb :single_post
 end
 
-# get '/judge/:id' do
-#     @specific_judge = Judge.find(params[:id])
-#     @judge_scores = @specific_judge.scores
-#     erb :specific_judge 
-# end
-
 #show all POSTS BY a specific USER
 get '/users/:id' do 
+
     @specific_user = user.find(params[:id])
     @owners_post = @specific_user.posts
     erb :user_posts
