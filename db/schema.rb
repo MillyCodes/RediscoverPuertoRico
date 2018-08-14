@@ -15,11 +15,11 @@ ActiveRecord::Schema.define(version: 2018_08_13_203523) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "post_tag", force: :cascade do |t|
+  create_table "post_tags", force: :cascade do |t|
     t.bigint "post_id"
     t.bigint "tag_id"
-    t.index ["post_id"], name: "index_post_tag_on_post_id"
-    t.index ["tag_id"], name: "index_post_tag_on_tag_id"
+    t.index ["post_id"], name: "index_post_tags_on_post_id"
+    t.index ["tag_id"], name: "index_post_tags_on_tag_id"
   end
 
   create_table "posts", force: :cascade do |t|
