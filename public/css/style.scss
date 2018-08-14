@@ -1,72 +1,42 @@
-.text-bold {
-    font-weight: 700;
-  }
-  
-  .text-small {
-    font-size: 0.9rem;
-  }
-  
+
   body {
     overflow-x: hidden;
   }
-  
   strong {
     font-weight: 700;
   }
-  
   a, i, span {
     display: inline-block;
     text-decoration: none;
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
   }
-  
   a {
     &:hover, &:focus {
       text-decoration: none;
     }
   }
-  
-  i {
-    &:hover, &:focus {
-      text-decoration: none;
-    }
-  }
-  
   span {
     &:hover, &:focus {
       text-decoration: none;
     }
   }
-  
-  a i {
-    -webkit-transition: none;
-    transition: none;
-  }
-  
   ul {
     margin: 0;
     padding: 0;
   }
-  
   section {
     padding: 100px 0;
     overflow-x: hidden;
   }
-  
   button, input {
     outline: none !important;
     font-family: "Open Sans", sans-serif;
   }
-  
   button {
     cursor: pointer;
   }
-  
   main, aside {
     padding: 50px 0 100px;
   }
-  
   h1 {
     a {
       margin-left: 10px;
@@ -81,18 +51,6 @@
       opacity: 1;
     }
   }
-  
-  .page-header {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    background: #fafafa;
-    margin-top: 30px;
-    h2 {
-      margin-bottom: 0;
-    }
-  }
-  
-  
   .sidebar {
     margin-bottom: 40px;
     padding: 30px;
@@ -101,39 +59,12 @@
       margin-bottom: 20px;
     }
   }
-
-  
-  .text-gray {
-    color: #999;
-    &:hover {
-      color: #999;
-    }
-  }
-  
   .text-white {
     color: #fff;
   }
-  
-  p {
-    &.text-hero {
-      font-size: 1.2em;
-      i {
-        font-size: 1.2em;
-      }
-    }
-    &.small-text-hero {
-      font-size: 1em;
-    }
-  }
-  
   h1, h2, h3, h4, h5, h6 {
     margin-bottom: 15px;
   }
-  
-  .container-fluid {
-    width: 100%;
-  }
-  
   a.hero-link {
     color: inherit !important;
     text-transform: uppercase;
@@ -142,8 +73,7 @@
     margin-top: 20px;
     font-weight: 300;
   }
-  
-  /* General Media Query ------------------------------------- */
+  // Gen Media Query 
   @media (max-width: 767px) {
     nav.navbar .search-btn {
       margin-left: 0;
@@ -162,22 +92,19 @@
       text-align: center;
     }
   }
-  
-  /*
-  * ==========================================================
-  *     NAVBAR
-  * ==========================================================
-  */
-  
+      //  NAVBAR
   .navbar {
     background: #fff;
     padding-top: 20px !important;
     padding-bottom: 20px !important;
     z-index: 9998;
     border-bottom: 1px solid #ddd;
+      a {
+      color: inherit !important;
+      text-decoration: none !important;
+    }
   }
-  
-  /* Navbar Media Query ------------------------------------- */
+//  Navbar Media Query 
   @media (max-width: 991px) {
     nav.navbar {
       .navbar-header, &::after {
@@ -191,13 +118,7 @@
       }
     }
   }
-  
-  /*
-  * ==========================================================
-  *     HERO SECTION
-  * ==========================================================
-  */
-  
+      // HERO SECTION
   section {
     &.hero {
       padding: 0;
@@ -210,24 +131,14 @@
         line-height: 1.2em;
       }
     }
-    &.latest-posts header {
-      margin-bottom: 50px;
-    }
   }
-  
-  /* Hero Section Media Query ------------------------------------- */
+  // Hero Section Media Query 
   @media (max-width: 767px) {
     section.hero .container {
       padding: 150px 20px;
     }
   }
-  
-  /*
-  * ==========================================================
-  *     LATEST SECTION
-  * ==========================================================
-  */
-  
+      // LATEST SECTION
   .post-meta {
     margin: 10px 0;
     font-size: 0.8em;
@@ -239,7 +150,6 @@
       }
     }
   }
-  
   .post {
     p:not(.lead) {
       font-weight: 400;
@@ -296,8 +206,7 @@
       display: none;
     }
   }
-  
-  /* Latest Posts Section Media Query ------------------------------------- */
+  // Latest Posts--- Media Query 
   @media (max-width: 767px) {
     .post {
       margin-bottom: 40px;
@@ -306,13 +215,7 @@
       }
     }
   }
-  
-  /*
-  * ==========================================================
-  *     FOOTER
-  * ==========================================================
-  */
-  
+      // FOOTER
   footer.main-footer {
     background: #0e0e0e;
     padding: 100px 0 0;
@@ -384,8 +287,7 @@
       display: none !important;
     }
   }
-  
-  /* Footer Media Query ------------------------------------- */
+// Footer Media Query 
   @media (max-width: 767px) {
     footer.main-footer {
       div[class*="col-"] {
@@ -407,7 +309,6 @@
       }
     }
   }
-  
   main.posts-listing {
     padding-top: 50px;
     padding-left: 0;
@@ -419,7 +320,6 @@
       font-size: 0.8em;
     }
   }
-  
   .sidebar {
     &.search {
       .form-group {
@@ -539,8 +439,7 @@
         border-color: #999;
       }
     }
-  }
-  
+  } 
   .blog-post {
     padding-left: 0;
     padding-right: 0;
@@ -575,47 +474,7 @@
         }
       }
     }
-    .posts-nav {
-      margin-top: 50px;
-      color: #777;
-      font-size: 0.8em;
-      a {
-        color: inherit;
-        width: calc(50% - 10px);
-        padding: 10px 20px;
-        border: 1px solid #eee;
-        margin-bottom: 15px;
-        &:hover {
-          border-color: #999;
-          .icon {
-            background: #999;
-            color: #fff;
-            border-color: #999;
-          }
-        }
-      }
-    }
-    .icon {
-      min-width: 35px;
-      max-width: 35px;
-      height: 35px;
-      border-radius: 50%;
-      line-height: 32px;
-      border: 1px solid #ddd;
-      color: #aaa;
-      font-size: 1.5em;
-      text-align: center;
-      -webkit-transition: all 0.2s;
-      transition: all 0.2s;
-      &.prev {
-        margin-right: 20px;
-      }
-      &.next {
-        margin-left: 20px;
-      }
-    }
   }
-  
   blockquote.blockquote {
     font-size: 1.05em;
     line-height: 1.7em;
@@ -630,13 +489,11 @@
       margin-bottom: 15px !important;
     }
   }
-  
   @media (max-width: 767px) {
     .posts-nav a {
       width: 100% !important;
     }
   }
-  
   @media (max-width: 575px) {
     .blog-post {
       .title::after {

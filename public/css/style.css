@@ -1,9 +1,3 @@
-.text-bold {
-  font-weight: 700; }
-
-.text-small {
-  font-size: 0.9rem; }
-
 body {
   overflow-x: hidden; }
 
@@ -12,22 +6,13 @@ strong {
 
 a, i, span {
   display: inline-block;
-  text-decoration: none;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s; }
+  text-decoration: none; }
 
 a:hover, a:focus {
   text-decoration: none; }
 
-i:hover, i:focus {
-  text-decoration: none; }
-
 span:hover, span:focus {
   text-decoration: none; }
-
-a i {
-  -webkit-transition: none;
-  transition: none; }
 
 ul {
   margin: 0;
@@ -58,14 +43,6 @@ h1 a {
 h1:hover a {
   opacity: 1; }
 
-.page-header {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  background: #fafafa;
-  margin-top: 30px; }
-  .page-header h2 {
-    margin-bottom: 0; }
-
 .sidebar {
   margin-bottom: 40px;
   padding: 30px;
@@ -73,26 +50,11 @@ h1:hover a {
   .sidebar header {
     margin-bottom: 20px; }
 
-.text-gray {
-  color: #999; }
-  .text-gray:hover {
-    color: #999; }
-
 .text-white {
   color: #fff; }
 
-p.text-hero {
-  font-size: 1.2em; }
-  p.text-hero i {
-    font-size: 1.2em; }
-p.small-text-hero {
-  font-size: 1em; }
-
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: 15px; }
-
-.container-fluid {
-  width: 100%; }
 
 a.hero-link {
   color: inherit !important;
@@ -102,7 +64,6 @@ a.hero-link {
   margin-top: 20px;
   font-weight: 300; }
 
-/* General Media Query ------------------------------------- */
 @media (max-width: 767px) {
   nav.navbar .search-btn {
     margin-left: 0;
@@ -116,19 +77,16 @@ a.hero-link {
     display: block;
     width: 100%;
     text-align: center; } }
-/*
-* ==========================================================
-*     NAVBAR
-* ==========================================================
-*/
 .navbar {
   background: #fff;
   padding-top: 20px !important;
   padding-bottom: 20px !important;
   z-index: 9998;
   border-bottom: 1px solid #ddd; }
+  .navbar a {
+    color: inherit !important;
+    text-decoration: none !important; }
 
-/* Navbar Media Query ------------------------------------- */
 @media (max-width: 991px) {
   nav.navbar .navbar-header, nav.navbar::after {
     width: 100%; }
@@ -136,11 +94,6 @@ a.hero-link {
     width: calc(100% - 170px); }
   nav.navbar .search-area {
     font-size: 0.75em; } }
-/*
-* ==========================================================
-*     HERO SECTION
-* ==========================================================
-*/
 section.hero {
   padding: 0;
   color: #fff; }
@@ -149,18 +102,10 @@ section.hero {
     position: relative; }
   section.hero h1 {
     line-height: 1.2em; }
-section.latest-posts header {
-  margin-bottom: 50px; }
 
-/* Hero Section Media Query ------------------------------------- */
 @media (max-width: 767px) {
   section.hero .container {
     padding: 150px 20px; } }
-/*
-* ==========================================================
-*     LATEST SECTION
-* ==========================================================
-*/
 .post-meta {
   margin: 10px 0;
   font-size: 0.8em; }
@@ -214,17 +159,11 @@ section.latest-posts header {
 .post .meta-last::after {
   display: none; }
 
-/* Latest Posts Section Media Query ------------------------------------- */
 @media (max-width: 767px) {
   .post {
     margin-bottom: 40px; }
     .post:last-of-type {
       margin-bottom: 0; } }
-/*
-* ==========================================================
-*     FOOTER
-* ==========================================================
-*/
 footer.main-footer {
   background: #0e0e0e;
   padding: 100px 0 0;
@@ -276,7 +215,6 @@ footer.main-footer {
   footer.main-footer .date::after, footer.main-footer .title::after {
     display: none !important; }
 
-/* Footer Media Query ------------------------------------- */
 @media (max-width: 767px) {
   footer.main-footer div[class*="col-"] {
     margin-bottom: 40px; }
@@ -419,38 +357,6 @@ main.posts-listing {
         font-size: 1em;
         line-height: 1.7em;
         color: #555; }
-  .blog-post .posts-nav {
-    margin-top: 50px;
-    color: #777;
-    font-size: 0.8em; }
-    .blog-post .posts-nav a {
-      color: inherit;
-      width: calc(50% - 10px);
-      padding: 10px 20px;
-      border: 1px solid #eee;
-      margin-bottom: 15px; }
-      .blog-post .posts-nav a:hover {
-        border-color: #999; }
-        .blog-post .posts-nav a:hover .icon {
-          background: #999;
-          color: #fff;
-          border-color: #999; }
-  .blog-post .icon {
-    min-width: 35px;
-    max-width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    line-height: 32px;
-    border: 1px solid #ddd;
-    color: #aaa;
-    font-size: 1.5em;
-    text-align: center;
-    -webkit-transition: all 0.2s;
-    transition: all 0.2s; }
-    .blog-post .icon.prev {
-      margin-right: 20px; }
-    .blog-post .icon.next {
-      margin-left: 20px; }
 
 blockquote.blockquote {
   font-size: 1.05em;
