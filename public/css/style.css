@@ -1961,7 +1961,7 @@ section.latest-posts header {
 
 .post p:not(.lead) {
   font-weight: 400;
-  color: #777;
+  color: #000;
   font-size: 0.95em;
 }
 

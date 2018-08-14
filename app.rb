@@ -17,14 +17,14 @@ get '/' do
     erb :index
 end
 
-
-get '/' do
-    if session[:user_id] 
-        erb :homepage
-    else
-        erb :sign_in
-    end
-end
+# do I need this?
+# get '/' do
+#     if session[:user_id] 
+#         erb :homepage
+#     else
+#         erb :sign_in
+#     end
+# end
 
 
 # get about page post -route works/erb done
@@ -40,14 +40,18 @@ end
 
 # get single post by id when clicked from main page
 # TEST AFTER SEED
-get '/single_post' do
-    # @specific_post = Post.find(params[:id])
+get '/single_post/:id' do
+    @specific_post = Post.find(params[:id])
+    @post_author = @specific_post.user
+    puts @post_author
     erb :single_post
 end
 
+
+
+
 #show all POSTS BY a specific USER
 get '/users/:id' do 
-
     @specific_user = user.find(params[:id])
     @owners_post = @specific_user.posts
     erb :user_posts
