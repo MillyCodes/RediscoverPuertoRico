@@ -1,7 +1,7 @@
 <!-- TEMPLATE FOR EACH INDIVIDUAL BLOG POST -->
 <!-- THIS IS A PLACEHOLDER, WILL HAV TO CREATE VARIABLES TO -->
 <!-- PULL SPECIFIC INFO TO DISPLAY FOR EACH POST IN THE BLOG -->
-
+@specific_post
 
 <div class="post-thumbnail"><img src="img/blog-post-3.jpeg" alt="..." class="img-fluid"></div>
   <!-- BLOG POST DETAILS: TITLE, AUTHOR, TAGS, DATE, PIC, POST TIME/DATE, VIEWS/COMMENTS, ETC -->
@@ -9,10 +9,10 @@
     <div class="post-meta d-flex justify-content-between">
       <div class="category"><a href="#">Business</a><a href="#">Financial</a></div>
     </div>
-    <h1>Diversity in Engineering: The Effect on Questions<a href="#"><i class="fa fa-bookmark-o"></i></a></h1>
+    <h1><%= @specific_post.title %>><a href="#"><i class="fa fa-bookmark-o"></i></a></h1>
     <div class="post-footer d-flex align-items-center flex-column flex-sm-row"><a href="#" class="author d-flex align-items-center flex-wrap">
         <div class="avatar"><img src="img/avatar-1.jpg" alt="..." class="img-fluid"></div>
-        <div class="title"><span>John Doe</span></div></a>
+        <div class="title"><span><%=@specific_post.user_id.name%>></span></div></a>
         <div class="d-flex align-items-center flex-wrap">       
         <div class="date"><i class="far fa-clock"></i> 2 days ago</div>
         <div class="views"><i class="far fa-eye"></i> 348</div>
