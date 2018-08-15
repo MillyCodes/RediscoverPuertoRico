@@ -40,7 +40,7 @@ get '/post/:id' do
 end
 
 
-#show all POSTS BY a specific USER
+#show USER PROFILE/POSTS BY a specific USER
 get '/users/:id' do 
     @specific_user = User.find(params[:id])
     @owners_posts = @specific_user.posts
@@ -49,12 +49,12 @@ end
 
 # ====LOGIN STUFF====
 
-#Sign In Form Route
+#Sign In Form Route DONE
 get '/login' do 
     erb :login
 end
 
-# Sign in Route
+# Sign in Route DONE
 post '/login' do
     user = User.find_by(username: params[:username])
 
