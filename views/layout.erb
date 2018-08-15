@@ -14,27 +14,13 @@
     <!--Font Awesome for the icons -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
     <!-- My CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="<%= url('css/style.css') %>">
 
  </head>
   <body>
     <header class="header">
       <!-- Main Navbar-->
       <nav class="navbar navbar-expand-lg">
-        <div class="search-area">
-          <div class="search-area-inner d-flex align-items-center justify-content-center">
-            <div class="row d-flex justify-content-center">
-              <div class="col-md-8">
-                <form action="#">
-                  <div class="form-group">
-                    <input type="search" name="search" id="search" placeholder="What are you looking for?">
-                    <button type="submit" class="submit"><i class="fas fa-search"></i></button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
         <div class="container">
           <!-- Navbar Brand -->
           <div class="navbar-header d-flex align-items-center justify-content-between">
@@ -87,33 +73,12 @@
           </div>
         </section>
 
-    <div class="container">
-      <div class="row">
-        <!-- Latest Posts -->
-        <main class="posts-listing col-lg-8"> 
-          <div class="container">
-            <div class="row">
-              <!-- post -->
+<%= yield%>
 
-                <%= yield%>
-
-           
-            </div>
-            <!-- Pagination 
-            <nav aria-label="Page navigation example">
-              <ul class="pagination pagination-template d-flex justify-content-center">
-                <li class="page-item"><a href="#" class="page-link"> <i class="fa fa-angle-left"></i></a></li>
-                <li class="page-item"><a href="#" class="page-link active">1</a></li>
-                <li class="page-item"><a href="#" class="page-link">2</a></li>
-                <li class="page-item"><a href="#" class="page-link">3</a></li>
-                <li class="page-item"><a href="#" class="page-link"> <i class="fa fa-angle-right"></i></a></li>
-              </ul>
-            </nav>  -->
-          </div>
-        </main>
+        
         <aside class="col-lg-4">
-          <!-- Widget [Search Bar Widget]-->
-          <div class="widget search">
+          <!-- Sidebar[Search Bar Sidebar]-->
+          <div class="sidebar search">
             <header>
               <h3 class="h6">Search the blog</h3>
             </header>
@@ -125,15 +90,15 @@
               </div>
             </form>
           </div>
-          <!-- Widget [Latest Posts Widget]        -->
-          <div class="widget latest-posts">
+          <!-- Sidebar[Latest Posts Sidebar]        -->
+          <div class="sidebar latest-posts">
             <header>
               <h3 class="h6">Latest Posts</h3>
             </header>
             <div class="blog-posts"><a href="#">
                 <div class="item d-flex align-items-center">
-                  <div class="image"><img src="img/small-thumbnail-1.jpg" alt="..." class="img-fluid"></div>
-                  <div class="title"><strong>Alberto Savoia Can Teach You About</strong>
+                <div class="image"><img src="/img/small-thumbnail-1.jpg" alt="..." class="img-fluid"></div>
+                  <div class="title"><strong>Sample recent blog post</strong>
                     <div class="d-flex align-items-center">
                       <div class="views"><i class="far fa-eye"></i> 500</div>
                       <div class="comments"><i class="far fa-comment-alt"></i></i>12</div>
@@ -141,8 +106,8 @@
                   </div>
                 </div></a><a href="#">
                 <div class="item d-flex align-items-center">
-                  <div class="image"><img src="img/small-thumbnail-2.jpg" alt="..." class="img-fluid"></div>
-                  <div class="title"><strong>Alberto Savoia Can Teach You About</strong>
+                <div class="image"><img src="/img/small-thumbnail-1.jpg" alt="..." class="img-fluid"></div>
+                  <div class="title"><strong>Another sample of recent post</strong>
                     <div class="d-flex align-items-center">
                       <div class="views"><i class="far fa-eye"></i> 500</div>
                       <div class="comments"><i class="far fa-comment-alt"></i></i>12</div>
@@ -150,8 +115,8 @@
                   </div>
                 </div></a><a href="#">
                 <div class="item d-flex align-items-center">
-                  <div class="image"><img src="img/small-thumbnail-3.jpg" alt="..." class="img-fluid"></div>
-                  <div class="title"><strong>Alberto Savoia Can Teach You About</strong>
+                <div class="image"><img src="/img/small-thumbnail-1.jpg" alt="..." class="img-fluid"></div>
+                  <div class="title"><strong>A third blog sample</strong>
                     <div class="d-flex align-items-center">
                       <div class="views"><i class="far fa-eye"></i> 500</div>
                       <div class="comments"><i class="far fa-comment-alt"></i></i>12</div>
@@ -159,28 +124,28 @@
                   </div>
                 </div></a></div>
           </div>
-          <!-- Widget [Categories Widget]-->
-          <div class="widget categories">
+          <!-- Sidebar [Categories Sidebar]-->
+          <div class="sidebar categories">
             <header>
               <h3 class="h6">Categories</h3>
             </header>
-            <div class="item d-flex justify-content-between"><a href="#">Growth</a><span>12</span></div>
-            <div class="item d-flex justify-content-between"><a href="#">Local</a><span>25</span></div>
-            <div class="item d-flex justify-content-between"><a href="#">Sales</a><span>8</span></div>
-            <div class="item d-flex justify-content-between"><a href="#">Tips</a><span>17</span></div>
-            <div class="item d-flex justify-content-between"><a href="#">Local</a><span>25</span></div>
+            <div class="item d-flex justify-content-between"><a href="#">History</a><span>12</span></div>
+            <div class="item d-flex justify-content-between"><a href="#">Travel Deals</a><span>25</span></div>
+            <div class="item d-flex justify-content-between"><a href="#">Guides & Tips</a><span>8</span></div>
+            <div class="item d-flex justify-content-between"><a href="#">Food & Drink</a><span>17</span></div>
+            <div class="item d-flex justify-content-between"><a href="#">Nightlife</a><span>25</span></div>
           </div>
-          <!-- Widget [Tags Cloud Widget]-->
-          <div class="widget tags">       
+          <!-- Sidebar [Tags Sidebar]-->
+          <div class="sidebar tags">       
             <header>
               <h3 class="h6">Tags</h3>
             </header>
             <ul class="list-inline">
-              <li class="list-inline-item"><a href="#" class="tag">#Business</a></li>
-              <li class="list-inline-item"><a href="#" class="tag">#Technology</a></li>
-              <li class="list-inline-item"><a href="#" class="tag">#Fashion</a></li>
-              <li class="list-inline-item"><a href="#" class="tag">#Sports</a></li>
-              <li class="list-inline-item"><a href="#" class="tag">#Economy</a></li>
+              <li class="list-inline-item"><a href="#" class="tag">#Beaches</a></li>
+              <li class="list-inline-item"><a href="#" class="tag">#Hotels</a></li>
+              <li class="list-inline-item"><a href="#" class="tag">#Bars & Nightlife</a></li>
+              <li class="list-inline-item"><a href="#" class="tag">#Activities</a></li>
+              <li class="list-inline-item"><a href="#" class="tag">#Tours</a></li>
             </ul>
           </div>
         </aside>
@@ -228,16 +193,16 @@
           <div class="col-md-4">
             <div class="latest-posts"><a href="#">
                 <div class="post d-flex align-items-center">
-                  <div class="image"><img src="img/small-thumbnail-1.jpg" alt="..." class="img-fluid"></div>
-                  <div class="title"><strong>Hotels for all budgets</strong><span class="date last-meta">October 26, 2016</span></div>
+                <div class="image"><img src="/img/small-thumbnail-2.jpg" alt="..." class="img-fluid"></div>
+                  <div class="title"><strong>Sample blog here</strong><span class="date last-meta">October 26, 2016</span></div>
                 </div></a><a href="#">
                 <div class="post d-flex align-items-center">
-                  <div class="image"><img src="img/small-thumbnail-2.jpg" alt="..." class="img-fluid"></div>
-                  <div class="title"><strong>Great street atrs in London</strong><span class="date last-meta">October 26, 2016</span></div>
+                <div class="image"><img src="/img/small-thumbnail-2.jpg" alt="..." class="img-fluid"></div>
+                  <div class="title"><strong>This needs to be edited</strong><span class="date last-meta">October 26, 2016</span></div>
                 </div></a><a href="#">
                 <div class="post d-flex align-items-center">
-                  <div class="image"><img src="img/small-thumbnail-3.jpg" alt="..." class="img-fluid"></div>
-                  <div class="title"><strong>Best coffee shops in Sydney</strong><span class="date last-meta">October 26, 2016</span></div>
+                  <div class="image"><img src="/img/small-thumbnail-1.jpg" alt="..." class="img-fluid"></div>
+                  <div class="title"><strong>Make this work!</strong><span class="date last-meta">October 26, 2016</span></div>
                 </div></a></div>
           </div>
         </div>
@@ -263,6 +228,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <!-- My JavaScript -->
-<script src="js/script.js"></script>
+<script src="<%= url('js/script.js') %>"></script>
   </body>
 </html>
