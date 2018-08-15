@@ -14,17 +14,9 @@ enable :sessions
 # main index, shows all blog posts and links, SEE 
 # IF ALL POST SHOW UP ON LOOP FOR INDEX.ERB FILE
 get '/' do
+    @posts = Post.order("id desc").limit(4)
     erb :index
 end
-
-# do I need this?
-# get '/' do
-#     if session[:user_id] 
-#         erb :homepage
-#     else
-#         erb :sign_in
-#     end
-# end
 
 
 # get about page post -route works/erb done
@@ -39,22 +31,20 @@ end
 
 
 # get single post by id when clicked from main page
-# TEST AFTER SEED
-get '/single_post/:id' do
+# WORKS!
+get '/post/:id' do
     @specific_post = Post.find(params[:id])
     @post_author = @specific_post.user
     puts @post_author
-    erb :single_post
+    erb :post
 end
-
-
 
 
 #show all POSTS BY a specific USER
 get '/users/:id' do 
-    @specific_user = user.find(params[:id])
-    @owners_post = @specific_user.posts
-    erb :user_posts
+    @specific_user = User.find(params[:id])
+    @owners_posts = @specific_user.posts
+    erb :user
 end
 
 # ====LOGIN STUFF====

@@ -1,0 +1,57 @@
+ <div class="container">
+      <div class="row">
+        <!-- Latest Posts -->
+        <main class="post blog-post col-lg-8"> 
+          <div class="container">
+
+            <div class="post-single">
+              <div class="post-details">
+                <div class="post-meta d-flex justify-content-between">
+                  <!-- <div class="category"><a href="#">Tags</a>, <a href="#">Another</a></div> -->
+                </div>
+                <h1> User Profile<a href="#"><i class="fa fa-bookmark-o far fa-bookmark"></i></a></h1>
+
+
+                
+                <div class="post-footer d-flex align-items-center flex-column flex-sm-row">
+                  <a href="/" class="author d-flex align-items-center flex-wrap">
+                    <div class="avatar"><img src="/img/avatar-1.jpg" alt="..." class="img-fluid"></div>
+                    <div class="title"><span> <%= @specific_user.name%></span></div></a>
+                    <div class="title"><span>Posts: <%= @specific_user.posts.size%></span></div></a>
+                  <div class="d-flex align-items-center flex-wrap">       
+                    <div class="date"><i class="icon-clock far fa-clock"></i></div>
+                    <div class="comments meta-last"><i class="icon-comment far fa-comment-alt"></i></div>
+                  </div>
+                </div>
+
+
+                <div class="post-body">
+                    <h2>Here are all posts by <%= @specific_user.name%>:</h2>
+                  <% @owners_posts.each do |post| %>
+              <div class="post col-xl-6">
+                <div class="post-thumbnail"><a href="/post/<%= post.id%>"><img src="/img/blog-post-1.jpeg" alt="..." class="img-fluid"></a></div>
+                <div class="post-details">
+                  <div class="post-meta d-flex justify-content-between">
+                    <div class="date meta-last"><%= post.published_at.strftime("%B | %d")%></div>
+                    <div class="category"><a href="#">Tags, Here</a></div>
+                  </div><a href="/post/<%= post.id%>">
+                    <h3 class="h4"> <%= post.title %></h3></a>
+                  <p class="text-muted"> <%= post.content.truncate_words(20) %> <a href="/post/<%= post.id%>">read more</a></p>
+                  <footer class="post-footer d-flex align-items-center"><a href="#" class="author d-flex align-items-center flex-wrap">
+                      <div class="avatar"><img src="/img/avatar-3.jpg" alt="..." class="img-fluid"></div>
+                      <div class="title"><span><%= post.user.name%></span></div></a>
+                    <div class="date"><i class="icon-clock far fa-clock"></i> 6 days ago</div>
+                    <div class="comments meta-last"><i class="icon-comment far fa-comment-alt"></i>12</div>
+                  </footer>
+                </div>
+              </div>
+             <% end %>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </main>
+
+
+

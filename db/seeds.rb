@@ -3,8 +3,8 @@ User.create(username: "MillyCodes", password: "millyrock", name: "Milly Rock", e
 
 Post.create( 
     user_id: 1,
-    title: "Diversity in Engineering: The Effect on Questions",
-    content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+    title: "Spend the Afternoon at Palomino Island",
+    content: "No need to leave the island to enjoy the best water activities Puerto Rico has to offer. Guests of El Conquistador Resort can hop on the private catamaran, go scuba diving, snorkel, sail, windsurf, or ride horseback across the pristine-white beach of Palamino Island."
     )
 
 
