@@ -7,7 +7,7 @@ require './models/post.rb'
 require './models/tag.rb'
 require './models/post_tag.rb'
 
-set :database, {adapter: 'postgresql', database: 'pr-blog'}
+
 enable :sessions
 
 # links to all other pages -works, BUT UPDATE ROUTES!

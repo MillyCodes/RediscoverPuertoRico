@@ -1,0 +1,10 @@
+development:
+  adapter: postgresql
+  database: 'pr-blog'
+
+production:
+  adapter: postgresql
+  host: <%= ec2-54-163-246-5.compute-1.amazonaws.com %>
+  database: <%= ENV['pr-blog'] %>
+  username: <%= ENV['Millz118@gmail.com'] %>
+  password: <%= ENV['red08dec'] %>
