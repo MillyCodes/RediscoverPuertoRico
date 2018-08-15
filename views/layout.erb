@@ -24,7 +24,20 @@
         <div class="container">
           <!-- Navbar Brand -->
           <div class="navbar-header d-flex align-items-center justify-content-between">
-            <!-- Navbar Brand --><a href="/" class="navbar-brand">Puerto Rico - A fresh perspective.</a>
+            <!-- Navbar Brand -->
+            <% if session[:user_id] %>
+
+                  <!-- only show this code when signed in -->
+                  <a href="/" class="navbar-brand">Hello <%= get_current_user.name %>, Puerto Rico welcomes you.</a>
+
+                <% else %>
+
+                  <!-- only show this code when signed out -->
+                  <a href="/" class="navbar-brand">Puerto Rico - A fresh perspective.</a>
+                
+                <% end %>
+            
+            
             <!-- Toggle Button-->
             <button type="button" data-toggle="collapse" data-target="#navbarcollapse" aria-controls="navbarcollapse" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler"><span></span><span></span><span></span></button>
           </div>

@@ -30,6 +30,18 @@ get '/contact' do
 end
 
 
+# ====SHOW & CREATE NEW POSTS======
+
+  #Index Action -> GET /resource
+get '/posts' do 
+    @posts = Post.all
+    erb :posts
+end
+
+get '/post/new' do
+    erb :new_post
+  end
+
 # get single post by id when clicked from main page
 # WORKS!
 get '/post/:id' do
@@ -39,9 +51,18 @@ get '/post/:id' do
     erb :post
 end
 
+post '/posts' do
+    Post.create(
+        title: params[:title],
+        content: params[:content],
+        user_id: session[:user_id])
+    redirect '/posts'
+  end
 
-#show USER PROFILE/POSTS BY a specific USER
-get '/users/:id' do 
+
+# =======SHOW USER PROFILE/POSTS BY a specific USER=======
+
+get '/user/:id' do 
     @specific_user = User.find(params[:id])
     @owners_posts = @specific_user.posts
     erb :user
@@ -65,7 +86,7 @@ post '/login' do
         #Print a helpful message
         flash[:info] = "#{user.username} has logged in"
         #redirect to homepage
-        redirect '/'
+        redirect "/user/#{user.id}"
     else 
         flash[:warning] = "Your username does not exist or your password is not correct"
         redirect '/login'
@@ -92,17 +113,24 @@ post '/signup' do
     redirect '/'
 end
 
+# when hitting this get path via a link
+#   it would reset the session user_id and redirect
+#   back to the homepage
+get "/logout" do
+    # this is the line that signs a user out
+    session[:user_id] = nil
+  
+    # lets the user know they have signed out
+    flash[:info] = "You have been signed out"
+    
+    redirect "/"
+  end
 
-# delete user or post?
-# delete '/dogs/:id' do 
-#     @current_dog = Dog.find(params[:id])
-#     @current_dog.destroy
-#     redirect '/dogs'
-# end
 
-# private
-# private methods?
 
-# def get_current_user 
-#     User.find(session[:user_id])
-# end
+# private methods
+private
+
+def get_current_user 
+    User.find(session[:user_id])
+end
