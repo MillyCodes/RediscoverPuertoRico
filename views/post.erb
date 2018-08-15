@@ -24,7 +24,8 @@
                 
                 <div class="post-footer d-flex align-items-center flex-column flex-sm-row">
                   <a href="/user/<%= @specific_post.user.id%>" class="author d-flex align-items-center flex-wrap">
-                    <div class="avatar"><img src="/img/avatar-1.jpg" alt="..." class="img-fluid"></div>
+                    <div class="avatar"><img src="/img/avatar-<%=@specific_post.user.id%>.jpg" alt="..." class="img-fluid"></div>
+                      
                     <div class="title"><span><%= @post_author.name %></span></div></a>
                   <div class="d-flex align-items-center flex-wrap">       
                     <div class="date"><i class="icon-clock far fa-clock"></i> 2 months ago</div>

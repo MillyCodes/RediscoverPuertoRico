@@ -1,0 +1,43 @@
+<% if session[:user_id] %>
+
+  <div class="container">
+    <div class="row">
+    <!-- Latest Posts -->
+    <main class="post blog-post col-lg-8"> 
+        <div class="container">
+        <div class="post-single">
+            <div class="post-details">
+            <h1> Create a Post<a href="#"><i class="fa fa-bookmark-o"></i></a></h1>
+            <div class="post-body">
+    <blockquote class="blockquote">
+        <form action="/posts" method="post">
+            <h3>Please submit your new post here!</h3>
+            <p>Title: <br><input style="width:95%" id="title" name="title" placeholder="Title"></p>
+            <p>Content:<br><textarea  rows="10" style="width:95%" id="content" name="content" placeholder="Content"></textarea></p>
+            <input type="submit" id="post-btn" class="btn btn-info">
+        </form>
+        <br><br>
+        <h6>Changed your mind? <a href="/">Cancel</a></h6>
+    </blockquote> 
+            </div>
+            </div>
+        </div>
+        </div>
+    </main>
+
+<% else %>
+<div class="container">
+    <div class="row">
+    <!-- Latest Posts -->
+    <main class="post blog-post col-lg-8"> 
+        <div class="container">
+        <div class="post-single">
+            <div class="post-details">
+            <h1> Not allowed.<a href="#"><i class="fa fa-bookmark-o"></i></a></h1>
+            <p>Please <a href="/login">Login</a> or <a href="/signup">Sign Up</a> to create a new post.</p>
+            </div>
+        </div>
+        </div>
+    </main>
+
+<% end %>
