@@ -47,7 +47,6 @@ get '/post/new' do
 get '/post/:id' do
     @specific_post = Post.find(params[:id])
     @post_author = @specific_post.user
-    puts @post_author
     erb :post
 end
 
@@ -133,4 +132,8 @@ private
 
 def get_current_user 
     User.find(session[:user_id])
+end
+
+def get_recent_posts
+    @posts = Post.order("created_at desc").limit(3)
 end

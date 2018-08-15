@@ -19,7 +19,7 @@
                     <h3 class="h4"> <%= post.title %></h3></a>
                   <p class="text-muted"> <%= post.content.truncate_words(23) %> <a href="/post/<%= post.id%>">read more</a></p>
                   <footer class="post-footer d-flex align-items-center"><a href="/user/<%= post.user.id%>" class="author d-flex align-items-center flex-wrap">
-                      <div class="avatar"><img src="img/avatar-3.jpg" alt="..." class="img-fluid"></div>
+                      <div class="avatar"><img src="/img/avatar-<%=@specific_post.user.id%>.jpg" alt="..." class="img-fluid"></div>
                       <div class="title"><span><%= post.user.name%></span></div></a>
                     <div class="date"><i class="icon-clock far fa-clock"></i> 6 days ago</div>
                     <div class="comments meta-last"><i class="icon-comment far fa-comment-alt"></i>12</div>
