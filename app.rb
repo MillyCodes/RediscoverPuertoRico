@@ -65,6 +65,11 @@ get '/posts/:id/edit' do
     erb :edit_post
 end
 
+put '/posts/:id' do 
+    @current_post = Post.find(params[:id])
+    @current_pot.update(title: params[:title], content: params[:content], image: params[:image])
+end
+
 
 # =======SHOW USER PROFILE/POSTS BY a specific USER=======
 get '/users' do
