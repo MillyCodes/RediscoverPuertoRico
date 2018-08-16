@@ -67,7 +67,7 @@ end
 
 put '/posts/:id' do 
     @current_post = Post.find(params[:id])
-    @current_pot.update(title: params[:title], content: params[:content], image: params[:image])
+    @current_post.update(title: params[:title], content: params[:content], image: params[:image])
 end
 
 

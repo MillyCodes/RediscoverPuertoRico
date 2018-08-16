@@ -31,7 +31,7 @@
                             <%#This is a hidden field we add to trick our browser to send a put request since the browser only recognizes get/post%>
                             
             <p>Title: <br><input style="width:95%" id="title" name="title" placeholder="Title" value="<%= @current_post.title %>"></p>
-            <p>Content:<br><textarea  rows="10" style="width:95%" id="content" name="content" placeholder="Content" value="<%= @current_post.content %>"></textarea></p>
+            <p>Content:<br><textarea  rows="10" style="width:95%" id="content" name="content" placeholder="Content" ><%= @current_post.content %></textarea></p>
             <p>Image: <input style="width:95%" id="image" name="image" placeholder="Image url (optional)" value="<%= @current_post.image %>">
             
   
