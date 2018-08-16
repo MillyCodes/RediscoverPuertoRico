@@ -14,7 +14,7 @@ enable :sessions
 # main index, shows all blog posts and links, SEE 
 # IF ALL POST SHOW UP ON LOOP FOR INDEX.ERB FILE
 get '/' do
-    @posts = Post.order("id desc").
+    @posts = Post.order("id desc")
     erb :index
 end
 
