@@ -65,9 +65,10 @@ get '/posts/:id/edit' do
     erb :edit_post
 end
 
-put '/posts/:id' do 
+put '/post/:id' do 
     @current_post = Post.find(params[:id])
     @current_post.update(title: params[:title], content: params[:content], image: params[:image])
+    redirect '/post/#{post.id}'
 end
 
 
