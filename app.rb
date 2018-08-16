@@ -14,7 +14,7 @@ enable :sessions
 # main index, shows all blog posts and links, SEE 
 # IF ALL POST SHOW UP ON LOOP FOR INDEX.ERB FILE
 get '/' do
-    @posts = Post.order("id desc").limit(4)
+    @posts = Post.order("id desc").
     erb :index
 end
 
@@ -56,7 +56,7 @@ post '/posts' do
         content: params[:content],
         user_id: session[:user_id],
         image: params[:image])
-    redirect '/posts'
+    redirect '/'
   end
 
 #Edit Action -> GET /resource/:id/edit
