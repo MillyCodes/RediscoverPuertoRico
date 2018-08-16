@@ -25,7 +25,7 @@
 
                 <div class="post-body">
                     <h3>Submit your edits!</h3>
-                    <form method="POST" action="/posts/<%= @current_post.id %>"> 
+                    <form method="POST" action="/post/<%= @current_post.id %>"> 
 
                     <input type="hidden" name="_method" value="PUT">
                             <%#This is a hidden field we add to trick our browser to send a put request since the browser only recognizes get/post%>
