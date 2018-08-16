@@ -59,6 +59,12 @@ post '/posts' do
     redirect '/posts'
   end
 
+#Edit Action -> GET /resource/:id/edit
+get '/posts/:id/edit' do
+    @current_post = Post.find(params[:id])
+    erb :edit_post
+end
+
 
 # =======SHOW USER PROFILE/POSTS BY a specific USER=======
 get '/users' do

@@ -1,0 +1,54 @@
+ <div class="container">
+      <div class="row">
+        <!-- Latest Posts -->
+        <main class="post blog-post col-lg-8"> 
+          <div class="container">
+
+            <div class="post-single">
+              <div class="post-details">
+                <div class="post-meta d-flex justify-content-between">
+                  <div class="category"><a href="#">Tags</a>, <a href="#">Another</a></div>
+                </div>
+                <h1> Puerto Rico has it all!<a href="#"><i class="fa fa-bookmark-o far fa-bookmark"></i></a></h1>
+
+                
+                <div class="post-footer d-flex align-items-center flex-column flex-sm-row">
+                  <a href="/" class="author d-flex align-items-center flex-wrap">
+                    <div class="avatar"><img src="/img/avatar-1.jpg" alt="..." class="img-fluid"></div>
+                    <div class="title"><span> Milly Rock</span></div></a>
+                  <div class="d-flex align-items-center flex-wrap">       
+                    <div class="date"><i class="icon-clock far fa-clock"></i></div>
+                    <div class="comments meta-last"><i class="icon-comment far fa-comment-alt"></i></div>
+                  </div>
+                </div>
+
+
+                <div class="post-body">
+                    <h3>Submit your edits!</h3>
+                    <form method="POST" action="/posts/<%= @current_post.id %>"> 
+
+                    <input type="hidden" name="_method" value="PUT">
+                            <%#This is a hidden field we add to trick our browser to send a put request since the browser only recognizes get/post%>
+                            
+            <p>Title: <br><input style="width:95%" id="title" name="title" placeholder="Title" value="<%= @current_post.title %>"></p>
+            <p>Content:<br><textarea  rows="10" style="width:95%" id="content" name="content" placeholder="Content" value="<%= @current_post.content %>"></textarea></p>
+            <p>Image: <input style="width:95%" id="image" name="image" placeholder="Image url (optional)" value="<%= @current_post.image %>">
+            
+  
+                    <br> <br>
+            <input type="submit" id="post-btn" class="btn btn-info">
+                        </form>
+
+                        <form method="POST" action="/posts/<%= @current_post.id %>">
+                            <input type="hidden" name="_method" value="DELETE">
+                            <input type="submit" value="Delete <%= @current_post.title %>">
+                        </form>
+  
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </main>
+
