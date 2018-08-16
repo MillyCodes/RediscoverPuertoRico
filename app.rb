@@ -54,17 +54,31 @@ post '/posts' do
     Post.create(
         title: params[:title],
         content: params[:content],
-        user_id: session[:user_id])
+        user_id: session[:user_id],
+        image: params[:image])
     redirect '/posts'
   end
 
 
 # =======SHOW USER PROFILE/POSTS BY a specific USER=======
+get '/users' do
+    @users = User.all
+    erb :users
+end
+
+
 
 get '/user/:id' do 
     @specific_user = User.find(params[:id])
     @owners_posts = @specific_user.posts
     erb :user
+end
+
+delete '/user/:id' do 
+    @specific_user = User.find(params[:id])
+    @specific_user.destroy
+    session[:user_id] = nil
+    redirect '/'
 end
 
 # ====LOGIN STUFF====
@@ -109,7 +123,7 @@ post '/signup' do
         b_day: params[:b_day]
     )
     session[:user_id] = user.id
-    redirect '/'
+    redirect "/user/#{user.id}"
 end
 
 # when hitting this get path via a link

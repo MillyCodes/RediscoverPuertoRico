@@ -9,7 +9,7 @@
                 <div class="post-meta d-flex justify-content-between">
                   <!-- <div class="category"><a href="#">Tags</a>, <a href="#">Another</a></div> -->
                 </div>
-                <h1> User Profile<a href="#"><i class="fa fa-bookmark-o far fa-bookmark"></i></a></h1>
+                <h1> User Profile: <%= @specific_user.name%><a href="#"><i class="fa fa-bookmark-o far fa-bookmark"></i></a></h1>
 
                 <div class="post-footer d-flex align-items-center flex-column flex-sm-row">
                   <a href="/" class="author d-flex align-items-center flex-wrap">
@@ -40,7 +40,7 @@
                     <h3>Here are all posts by <%= @specific_user.name%>:</h3>
                   <% @owners_posts.each do |post| %>
               <div class="post blog-post">
-                <div class="post-thumbnail"><a href="/post/<%= post.id%>"><img src="/img/blog-post-1.jpeg" alt="..." class="img-fluid"></a></div>
+                <div class="post-thumbnail"><a href="/post/<%= post.id%>"><img src="<%=post.image%>" alt="..." class="img-fluid"></a></div>
                 <div class="post-details">
                   <div class="post-meta d-flex justify-content-between">
                     <div class="date meta-last"><%= post.created_at.strftime("%B | %d")%></div>
@@ -58,8 +58,23 @@
               </div>
              <% end %>
                 </div>
+                
+                <% if session[:user_id] %>
 
-              </div>
+                  <!-- only show this code when signed in -->
+                  
+                   
+                  </div>
+                <br><br>
+                <div class="title meta-last">
+                 <form method="POST" action="/user/<%= @specific_user.id %>">
+                  <input type="hidden" name="_method" value="DELETE">
+                  <input type="submit" value="Delete <%= @specific_user.name %>">
+                  </form>
+                </div>
+                  <% end %> 
+
+              
             </div>
           </div>
         </main>
