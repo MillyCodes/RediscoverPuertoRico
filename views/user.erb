@@ -38,7 +38,7 @@
 
 
                 <div class="post-body">
-                    <h3>Here are all posts by <%= @specific_user.username%>:</h3>
+                    <h3>Here are all posts by <%= @specific_user.name%>:</h3>
                   <% @owners_posts.each do |post| %>
               <div class="post blog-post">
                 <div class="post-thumbnail"><a href="/post/<%= post.id%>"><img src="<%=post.image%>" alt="..." class="img-fluid"></a></div>
@@ -52,7 +52,7 @@
                   <!-- only show this code when signed in -->
                   
                 <div class="category"><a href="/posts/<%= post.id%>/edit">Edit this Post</a></div>
-                  <hr>
+                  
                 <% end %>    
                     
 
@@ -84,6 +84,7 @@
                   <input type="submit" value="Delete <%= @specific_user.name %>">
                   </form>
                 </div>
+                <br>
                   <% end %> 
 
               

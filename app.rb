@@ -163,3 +163,7 @@ end
 def get_recent_posts
     @posts = Post.order("created_at desc").limit(3)
 end
+
+def post_count
+    Post.all.count
+end
