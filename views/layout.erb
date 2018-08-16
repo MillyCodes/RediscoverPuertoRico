@@ -97,11 +97,10 @@
             <header>
               <h3 class="h6">User Tools</h3>
             </header>
-            <div class="item d-flex justify-content-between"><a href="/user/#{user.id}">View Profile</a></div>
-            <div class="item d-flex justify-content-between"><a href="/user/#{user.id}">Edit Profile</a></div>
-            <div class="item d-flex justify-content-between"><a href="#">Create New Post</a></div>
+            <div class="item d-flex justify-content-between"><a href="/user/<%=get_current_user.id%>">View Profile</a></div>
+            <div class="item d-flex justify-content-between"><a href="/user/<%=get_current_user.id%>">Edit Profile</a></div>
+            <div class="item d-flex justify-content-between"><a href='/post/new'>Create new post</a></div>
             <div class="item d-flex justify-content-between"><a href="/posts">View All Posts</a></div>
-            <div class="item d-flex justify-content-between"><a href="/">Delete Account</a></div>
           </div>
                 
 
