@@ -68,7 +68,7 @@ end
 put '/post/:id' do 
     @current_post = Post.find(params[:id])
     @current_post.update(title: params[:title], content: params[:content], image: params[:image])
-    redirect '/post/#{post.id}'
+    redirect "/post/#{post.id}"
 end
 
 
