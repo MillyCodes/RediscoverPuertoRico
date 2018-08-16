@@ -95,7 +95,7 @@
             <% if session[:user_id] %>
               <div class="sidebar categories">
             <header>
-              <h3 class="h6">User Tools</h3>
+              <h3 class="h6">User Tools for <%=get_current_user.username%></h3>
             </header>
             <div class="item d-flex justify-content-between"><a href="/user/<%=get_current_user.id%>">View Profile</a></div>
             <div class="item d-flex justify-content-between"><a href="/user/<%=get_current_user.id%>">Edit Profile</a></div>

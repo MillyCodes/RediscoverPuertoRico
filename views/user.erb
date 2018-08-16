@@ -38,7 +38,7 @@
 
 
                 <div class="post-body">
-                    <h3>Here are all posts by <%= @specific_user.name%>:</h3>
+                    <h3>Here are all posts by <%= @specific_user.username%>:</h3>
                   <% @owners_posts.each do |post| %>
               <div class="post blog-post">
                 <div class="post-thumbnail"><a href="/post/<%= post.id%>"><img src="<%=post.image%>" alt="..." class="img-fluid"></a></div>
