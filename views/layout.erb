@@ -28,7 +28,7 @@
             <% if session[:user_id] %>
 
                   <!-- only show this code when signed in -->
-                  <a href="/" class="navbar-brand">Hello <%= get_current_user.name %>, Puerto Rico welcomes you.</a>
+                  <a href="/" class="navbar-brand">Hello <%= get_current_user.name %>, Puerto Rico welcomes you.</a> 
 
                 <% else %>
 
@@ -90,6 +90,23 @@
 
         
         <aside class="col-lg-4">
+        <!-- if signed in-->
+          
+            <% if session[:user_id] %>
+              <div class="sidebar categories">
+            <header>
+              <h3 class="h6">User Tools</h3>
+            </header>
+            <div class="item d-flex justify-content-between"><a href="/user/#{user.id}">View Profile</a></div>
+            <div class="item d-flex justify-content-between"><a href="/user/#{user.id}">Edit Profile</a></div>
+            <div class="item d-flex justify-content-between"><a href="#">Create New Post</a></div>
+            <div class="item d-flex justify-content-between"><a href="/posts">View All Posts</a></div>
+            <div class="item d-flex justify-content-between"><a href="/">Delete Account</a></div>
+          </div>
+                
+
+            <% end %>
+          
           <!-- Sidebar[Search Bar Sidebar]-->
           <div class="sidebar search">
             <header>
@@ -108,34 +125,23 @@
             <header>
               <h3 class="h6">Latest Posts</h3>
             </header>
-            <div class="blog-posts"><a href="#">
+            
+            <div class="blog-posts">
+             
+            <% get_recent_posts.each do |post| %>
+              <a href="/post/<%= post.id%>">
                 <div class="item d-flex align-items-center">
-                <div class="image"><img src="/img/small-thumbnail-1.jpg" alt="..." class="img-fluid"></div>
-                  <div class="title"><strong>Sample recent blog post</strong>
+                <div class="image"><img src="<%= post.image%>" alt="..." class="img-fluid"></div>
+                  <div class="title"><strong> <%= post.title %></strong>
                     <div class="d-flex align-items-center">
                       <div class="views"><i class="far fa-eye"></i> 500</div>
                       <div class="comments"><i class="far fa-comment-alt"></i></i>12</div>
                     </div>
                   </div>
-                </div></a><a href="#">
-                <div class="item d-flex align-items-center">
-                <div class="image"><img src="/img/small-thumbnail-1.jpg" alt="..." class="img-fluid"></div>
-                  <div class="title"><strong>Another sample of recent post</strong>
-                    <div class="d-flex align-items-center">
-                      <div class="views"><i class="far fa-eye"></i> 500</div>
-                      <div class="comments"><i class="far fa-comment-alt"></i></i>12</div>
-                    </div>
-                  </div>
-                </div></a><a href="#">
-                <div class="item d-flex align-items-center">
-                <div class="image"><img src="/img/small-thumbnail-1.jpg" alt="..." class="img-fluid"></div>
-                  <div class="title"><strong>A third blog sample</strong>
-                    <div class="d-flex align-items-center">
-                      <div class="views"><i class="far fa-eye"></i> 500</div>
-                      <div class="comments"><i class="far fa-comment-alt"></i></i>12</div>
-                    </div>
-                  </div>
-                </div></a></div>
+                </div></a>
+              <% end %>
+                
+                </div>
           </div>
           <!-- Sidebar [Categories Sidebar]-->
           <div class="sidebar categories">
@@ -204,19 +210,17 @@
           </div>
           <!-- HOPE TO MAKE THIS SECTION A RECENT BLOGS LINK WITH THUMBNAIL, INFO.-->
           <div class="col-md-4">
-            <div class="latest-posts"><a href="#">
+            <div class="latest-posts">
+
+            <% @posts.each do |post| %>
+              <a href="/post/<%= post.id%>">
                 <div class="post d-flex align-items-center">
-                <div class="image"><img src="/img/small-thumbnail-2.jpg" alt="..." class="img-fluid"></div>
-                  <div class="title"><strong>Sample blog here</strong><span class="date last-meta">October 26, 2016</span></div>
-                </div></a><a href="#">
-                <div class="post d-flex align-items-center">
-                <div class="image"><img src="/img/small-thumbnail-2.jpg" alt="..." class="img-fluid"></div>
-                  <div class="title"><strong>This needs to be edited</strong><span class="date last-meta">October 26, 2016</span></div>
-                </div></a><a href="#">
-                <div class="post d-flex align-items-center">
-                  <div class="image"><img src="/img/small-thumbnail-1.jpg" alt="..." class="img-fluid"></div>
-                  <div class="title"><strong>Make this work!</strong><span class="date last-meta">October 26, 2016</span></div>
-                </div></a></div>
+                <div class="image"><img src="<%= post.image%>" alt="..." class="img-fluid"></div>
+                  <div class="title"><strong><%= post.title %> </strong><span class="date last-meta"><%= post.created_at.strftime("%B %d, %Y")%></span></div>
+                </div></a>
+               <% end %>
+                
+                </div>
           </div>
         </div>
       </div>
