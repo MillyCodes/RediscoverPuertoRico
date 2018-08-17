@@ -82,7 +82,7 @@ end
 
 get '/user/:id' do 
     @specific_user = User.find(params[:id])
-    @owners_posts = @specific_user.posts
+    @owners_posts = @specific_user.posts.order("created_at desc")
     erb :user
 end
 
