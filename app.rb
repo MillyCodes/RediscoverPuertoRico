@@ -10,7 +10,7 @@ require './models/post_tag.rb'
 
 enable :sessions
 
-# links to all other pages -works, BUT UPDATE ROUTES!
+# links to all other pages -works!
 # main index, shows all blog posts and links, SEE 
 # IF ALL POST SHOW UP ON LOOP FOR INDEX.ERB FILE
 get '/' do
@@ -60,7 +60,7 @@ post '/posts' do
   end
 
 #Edit Action -> GET /resource/:id/edit
-get '/posts/:id/edit' do
+get '/post/:id/edit' do
     @current_post = Post.find(params[:id])
     erb :edit_post
 end
@@ -68,7 +68,7 @@ end
 put '/post/:id' do 
     @current_post = Post.find(params[:id])
     @current_post.update(title: params[:title], content: params[:content], image: params[:image])
-    redirect "/post/#{post.id}"
+    redirect "/post/#{@current_post.id}"
 end
 
 
