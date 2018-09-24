@@ -1,9 +1,6 @@
 # RediscoverPuertoRico
 Learning Objectives are to demonstrate an understanding of Sinatra, ActiveRecord, Cookies and deploying to Heroku. A fullstack simple content management sytem aka a blog with all CRUD functionality built in. This website enables someone to sign up for an account and create relevant posts on a topic. Tech used includes Ruby, Sinatra, ActiveRecord for all CRUD, Postgres database transactions, Sass and Bootstrap for presenting a responsive and clean front end product.
 
-# Milly's Code School Admin Panel
-Work in progress: Admin panel for a fictitious coding school whereby the administrator can create users, cohorts and courses as well as edit and destroy as needed.
-
 # Technologies Used
 - Ruby 2.3.0
 - Sinatra DSL
