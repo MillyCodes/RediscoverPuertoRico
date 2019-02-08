@@ -12,19 +12,13 @@ Learning Objectives are to demonstrate an understanding of Sinatra, ActiveRecord
 - JQuery 
 
 # Demo Login
-- Username: `test@test.com`
-- Password: `test123`
+- Username: `dpatlut`
+- Password: `123`
 
 # Functionality
 - Potential users can create account for free 
 - Once logged in, members have added ability to publish, edit and delete their posts.
 - Only logged in users can see detailed profile information of other users.
-
-# Pictures
-
-![PR Blog](https://github.com/MillyCodes/RediscoverPuertoRico/blob/master/public/img/Screen%20Shot%202018-09-28%20at%206.43.42%20PM.png?raw=true)
-![PR Blog](https://github.com/MillyCodes/RediscoverPuertoRico/blob/master/public/img/Screen%20Shot%202018-09-28%20at%206.43.57%20PM.png?raw=true)
-![PR Blog](https://github.com/MillyCodes/RediscoverPuertoRico/blob/master/public/img/Screen%20Shot%202018-09-28%20at%206.44.15%20PM.png?raw=true)
 
 # Beyond MVP - upcoming updates
 - Create AJAX calls for all CRUD functions.
